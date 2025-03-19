@@ -24,6 +24,7 @@
                 <li><a href="#properties">Bất động sản</a></li>
                 <li><a href="#about">Về chúng tôi</a></li>
                 <li><a href="#contact">Liên hệ</a></li>
+                <li><a href="login.html" class="login-btn">Đăng nhập</a></li>
             </ul>
         </nav>
     </header>
@@ -50,7 +51,7 @@
                 <button class="filter-btn" data-filter="Cho thuê">Cho thuê</button>
             </div>
             <div class="property-grid">
-                <div class="property-card">
+                <div class="property-card" data-id="1">
                     <div class="property-image">
                         <img src="images/house1.jpg" alt="Luxury Villa">
                         <span class="property-tag">Bán</span>
@@ -64,10 +65,12 @@
                             <span><i class="fas fa-car"></i> 2 Gara</span>
                         </div>
                         <p class="price">$500,000</p>
-                        <button class="view-details">Xem chi tiết</button>
+                        <button class="view-details" onclick="window.location.href='property-detail.html?id=1'">Xem chi
+                            tiết</button>
+                        <button class="view-details" data-id="1">Xem chi tiết</button>
                     </div>
                 </div>
-                <div class="property-card">
+                <div class="property-card" data-id="2">
                     <div class="property-image">
                         <img src="images/house2.jpg" alt="Luxury Villa">
                         <span class="property-tag">Bán</span>
@@ -81,10 +84,10 @@
                             <span><i class="fas fa-car"></i> 2 Gara</span>
                         </div>
                         <p class="price">$500,000</p>
-                        <button class="view-details">Xem chi tiết</button>
+                        <button class="view-details" data-id="2">Xem chi tiết</button>
                     </div>
                 </div>
-                <div class="property-card">
+                <div class="property-card" data-id="3">
                     <div class="property-image">
                         <img src="images/house3.jpg" alt="Luxury Villa">
                         <span class="property-tag">Bán</span>
@@ -98,10 +101,10 @@
                             <span><i class="fas fa-car"></i> 2 Gara</span>
                         </div>
                         <p class="price">$500,000</p>
-                        <button class="view-details">Xem chi tiết</button>
+                        <button class="view-details" data-id="3">Xem chi tiết</button>
                     </div>
                 </div>
-                <div class="property-card">
+                <div class="property-card" data-id="4">
                     <div class="property-image">
                         <img src="images/house4.jpg" alt="Luxury Villa">
                         <span class="property-tag">Bán</span>
@@ -115,10 +118,10 @@
                             <span><i class="fas fa-car"></i> 2 Gara</span>
                         </div>
                         <p class="price">$500,000</p>
-                        <button class="view-details">Xem chi tiết</button>
+                        <button class="view-details" data-id="4">Xem chi tiết</button>
                     </div>
                 </div>
-                <div class="property-card">
+                <div class="property-card" data-id="5">
                     <div class="property-image">
                         <img src="images/house5.jpg" alt="Modern Apartment">
                         <span class="property-tag">Cho thuê</span>
@@ -132,11 +135,11 @@
                             <span><i class="fas fa-car"></i> 1 Gara</span>
                         </div>
                         <p class="price">$2,000/tháng</p>
-                        <button class="view-details">Xem chi tiết</button>
+                        <button class="view-details" data-id="5">Xem chi tiết</button>
                     </div>
                 </div>
 
-                <div class="property-card">
+                <div class="property-card" data-id="6">
                     <div class="property-image">
                         <img src="images/house6.jpg" alt="Luxury House">
                         <span class="property-tag">Bán</span>
@@ -150,7 +153,7 @@
                             <span><i class="fas fa-car"></i> 1 Gara</span>
                         </div>
                         <p class="price">$300,000</p>
-                        <button class="view-details">Xem chi tiết</button>
+                        <button class="view-details" data-id="6">Xem chi tiết</button>
                     </div>
                 </div>
             </div>

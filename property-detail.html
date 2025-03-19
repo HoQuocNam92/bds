@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biệt Thự Sang Trọng - Grand Estate</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/property-detail.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="js/property-detail.js" defer></script>
+</head>
+
+<body>
+    <!-- Header (giữ nguyên như index.html) -->
+
+    <!-- Property Detail Section -->
+    <section class="property-detail">
+        <div class="container">
+            <!-- Gallery -->
+            <div class="property-gallery">
+                <div class="main-image">
+                    <img src="images/house1.jpg" alt="Biệt Thự Sang Trọng" id="mainImage">
+                    <button class="gallery-nav prev"><i class="fas fa-chevron-left"></i></button>
+                    <button class="gallery-nav next"><i class="fas fa-chevron-right"></i></button>
+                </div>
+                <div class="thumbnail-list">
+                    <img src="images/houseDetail-1.jpg" alt="Thumbnail 1" class="active">
+                    <img src="images/houseDetail-2.jpg" alt="Thumbnail 2">
+                    <img src="images/houseDetail-3.jpg" alt="Thumbnail 3">
+                    <img src="images/houseDetail-4.jpg" alt="Thumbnail 4">
+                    <img src="images/houseDetail-5.jpg" alt="Thumbnail 5">
+                </div>
+            </div>
+
+            <!-- Property Info -->
+            <div class="property-content">
+                <div class="property-header">
+                    <div class="property-title">
+                        <h1>Biệt Thự Sang Trọng</h1>
+                        <p class="location"><i class="fas fa-map-marker-alt"></i> Quận 2, TP.HCM</p>
+                    </div>
+                    <div class="property-price">
+                        <span class="price">$500,000</span>
+                        <span class="status">Đang bán</span>
+                    </div>
+                </div>
+
+                <div class="property-features">
+                    <div class="feature">
+                        <i class="fas fa-bed"></i>
+                        <span>4 Phòng ngủ</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-bath"></i>
+                        <span>3 Phòng tắm</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-car"></i>
+                        <span>2 Gara</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-ruler-combined"></i>
+                        <span>300 m²</span>
+                    </div>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="quick-actions">
+                    <button class="action-btn favorite">
+                        <i class="far fa-heart"></i>
+                        Yêu thích
+                    </button>
+                    <button class="action-btn share">
+                        <i class="fas fa-share-alt"></i>
+                        Chia sẻ
+                    </button>
+                    <button class="action-btn schedule">
+                        <i class="far fa-calendar-alt"></i>
+                        Đặt lịch xem
+                    </button>
+                </div>
+
+                <!-- Tabs -->
+                <div class="property-tabs">
+                    <button class="tab-btn active" data-tab="description">Mô tả</button>
+                    <button class="tab-btn" data-tab="details">Chi tiết</button>
+                    <button class="tab-btn" data-tab="location">Vị trí</button>
+                    <button class="tab-btn" data-tab="reviews">Đánh giá</button>
+                </div>
+
+                <!-- Tab Contents -->
+                <div class="tab-content">
+                    <!-- Description Tab -->
+                    <div class="tab-pane active" id="description">
+                        <h3>Tổng quan</h3>
+                        <p>Biệt thự sang trọng với thiết kế hiện đại, nằm trong khu compound an ninh 24/7. Không gian
+                            sống đẳng cấp với view sông thoáng mát, phù hợp cho gia đình nhiều thế hệ.</p>
+
+                        <h3>Đặc điểm nổi bật</h3>
+                        <ul class="highlights">
+                            <li>Thiết kế hiện đại, sang trọng</li>
+                            <li>Nội thất cao cấp</li>
+                            <li>View sông thoáng mát</li>
+                            <li>An ninh 24/7</li>
+                            <li>Tiện ích đầy đủ</li>
+                        </ul>
+                    </div>
+
+                    <!-- Details Tab -->
+                    <div class="tab-pane" id="details">
+                        <div class="details-grid">
+                            <div class="detail-item">
+                                <span class="label">Loại nhà:</span>
+                                <span class="value">Biệt thự</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="label">Diện tích đất:</span>
+                                <span class="value">300 m²</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="label">Diện tích sử dụng:</span>
+                                <span class="value">450 m²</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="label">Năm xây dựng:</span>
+                                <span class="value">2022</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="label">Pháp lý:</span>
+                                <span class="value">Sổ hồng</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="label">Hướng nhà:</span>
+                                <span class="value">Đông Nam</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Location Tab -->
+                    <div class="tab-pane" id="location">
+                        <div id="map" class="property-map"></div>
+                        <div class="nearby-places">
+                            <h3>Tiện ích xung quanh</h3>
+                            <div class="places-list">
+                                <div class="place-item">
+                                    <i class="fas fa-school"></i>
+                                    <div class="place-info">
+                                        <h4>Trường Quốc tế</h4>
+                                        <p>500m</p>
+                                    </div>
+                                </div>
+                                <div class="place-item">
+                                    <i class="fas fa-shopping-cart"></i>
+                                    <div class="place-info">
+                                        <h4>Siêu thị</h4>
+                                        <p>800m</p>
+                                    </div>
+                                </div>
+                                <div class="place-item">
+                                    <i class="fas fa-hospital"></i>
+                                    <div class="place-info">
+                                        <h4>Bệnh viện</h4>
+                                        <p>1.2km</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Reviews Tab -->
+                    <div class="tab-pane" id="reviews">
+                        <div class="reviews-summary">
+                            <div class="rating-average">
+                                <span class="rating">4.8</span>
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <span class="review-count">12 đánh giá</span>
+                            </div>
+                        </div>
+
+                        <div class="reviews-list">
+                            <!-- Review Item -->
+                            <div class="review-item">
+                                <div class="review-header">
+                                    <img src="images/avatar1.jpg" alt="User" class="reviewer-avatar">
+                                    <div class="reviewer-info">
+                                        <h4>Nguyễn Văn A</h4>
+                                        <div class="stars">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <span class="review-date">2 tháng trước</span>
+                                    </div>
+                                </div>
+                                <p class="review-content">Vị trí đẹp, thiết kế hiện đại, không gian thoáng mát. Rất hài
+                                    lòng với dịch vụ tư vấn của công ty.</p>
+                            </div>
+                        </div>
+
+                        <!-- Add Review Form -->
+                        <div class="add-review">
+                            <h3>Viết đánh giá</h3>
+                            <form class="review-form">
+                                <div class="rating-input">
+                                    <span>Đánh giá:</span>
+                                    <div class="stars">
+                                        <i class="far fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                </div>
+                                <textarea placeholder="Nhập đánh giá của bạn"></textarea>
+                                <button type="submit" class="submit-review">Gửi đánh giá</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Agent -->
+            <div class="contact-agent">
+                <div class="agent-info">
+                    <img src="images/agent.jpg" alt="Agent" class="agent-avatar">
+                    <div class="agent-details">
+                        <h3>Trần Thị B</h3>
+                        <p>Chuyên viên tư vấn cao cấp</p>
+                        <div class="agent-contact">
+                            <a href="tel:+84987654321"><i class="fas fa-phone"></i> +84 987 654 321</a>
+                            <a href="mailto:agent@grandestate.com"><i class="fas fa-envelope"></i>
+                                agent@grandestate.com</a>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form">
+                    <input type="text" placeholder="Họ và tên">
+                    <input type="email" placeholder="Email">
+                    <input type="tel" placeholder="Số điện thoại">
+                    <textarea placeholder="Tin nhắn"></textarea>
+                    <button type="submit">Gửi tin nhắn</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Similar Properties -->
+    <section class="similar-properties">
+        <div class="container">
+            <h2>Bất động sản tương tự</h2>
+            <div class="property-grid">
+                <!-- Similar property cards (3-4 items) -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (giữ nguyên như index.html) -->
+
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html">Grand Estate</a>
+        </div>
+        <!-- ... rest of navbar ... -->
+    </nav>
+
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="index.html">Trang chủ</a>
+            <i class="fas fa-chevron-right"></i>
+            <a href="#properties">Bất động sản</a>
+            <i class="fas fa-chevron-right"></i>
+            <span class="current-page">Chi tiết bất động sản</span>
+        </div>
+    </div>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
+    <script src="js/property-detail.js"></script>
+</body>
+
+</html>

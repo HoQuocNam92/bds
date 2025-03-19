@@ -32,23 +32,21 @@ const filterButtons = document.querySelectorAll(".filter-btn");
 
 filterButtons.forEach((button) => {
   button.addEventListener("click", () => {
+    // Remove active class from all buttons
+    filterButtons.forEach((btn) => btn.classList.remove("active"));
+    // Add active class to clicked button
+    button.classList.add("active");
+
     const filterValue = button.getAttribute("data-filter");
 
     propertyCards.forEach((card) => {
-      if (filterValue === "all") {
+      const propertyType = card.querySelector(".property-tag").textContent;
+      if (filterValue === "all" || filterValue === propertyType) {
         card.style.display = "block";
       } else {
-        if (card.querySelector(".property-tag").textContent === filterValue) {
-          card.style.display = "block";
-        } else {
-          card.style.display = "none";
-        }
+        card.style.display = "none";
       }
     });
-
-    // Update active filter button
-    filterButtons.forEach((btn) => btn.classList.remove("active"));
-    button.classList.add("active");
   });
 });
 
@@ -77,8 +75,8 @@ contactForm.addEventListener("submit", function (e) {
     return;
   }
 
-  // Simulate form submission
-  showNotification("Gửi tin nhắn thành công!", "success");
+  // Submit form
+  showNotification("Gửi tin nhắn thành công!");
   this.reset();
 });
 
@@ -91,7 +89,7 @@ function isValidPhone(phone) {
   return /(84|0[3|5|7|8|9])+([0-9]{8})\b/.test(phone);
 }
 
-function showNotification(message, type) {
+function showNotification(message, type = "success") {
   const notification = document.createElement("div");
   notification.className = `notification ${type}`;
   notification.textContent = message;
@@ -128,3 +126,39 @@ document.querySelectorAll(".property-image img").forEach((image) => {
     });
   });
 });
+
+// Property click handling
+document.querySelectorAll(".view-details").forEach((button) => {
+  button.addEventListener("click", function (e) {
+    if (this.tagName === "BUTTON") {
+      // Nếu là button thì prevent default
+      e.preventDefault();
+    }
+    const propertyCard = this.closest(".property-card");
+    const propertyId = propertyCard.dataset.id;
+
+    // Lưu thông tin property vào sessionStorage
+    const propertyData = {
+      id: propertyId,
+      title: propertyCard.querySelector("h3").textContent,
+      location: propertyCard.querySelector(".location").textContent,
+      price: propertyCard.querySelector(".price").textContent,
+      type: propertyCard.querySelector(".property-tag").textContent,
+      features: {
+        beds: propertyCard.querySelector(".fa-bed").parentNode.textContent,
+        baths: propertyCard.querySelector(".fa-bath").parentNode.textContent,
+        garage: propertyCard.querySelector(".fa-car").parentNode.textContent,
+      },
+      image: propertyCard.querySelector(".property-image img").src,
+    };
+
+    sessionStorage.setItem("selectedProperty", JSON.stringify(propertyData));
+    window.location.href = `property-detail.html?id=${propertyId}`;
+  });
+});
+
+window.onerror = function (msg, url, lineNo, columnNo, error) {
+  console.error("Error: " + msg + "\nURL: " + url + "\nLine: " + lineNo);
+  showNotification("Đã xảy ra lỗi. Vui lòng thử lại sau.", "error");
+  return false;
+};
